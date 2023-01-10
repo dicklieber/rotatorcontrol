@@ -127,7 +127,7 @@ ghRelease := {
 
     log.info(s"pubArtifact: $pubArtifact")
 
-    val cmd = s"""gh release create --generate-notes --notes "java -jar rotatorcontrol.jar" v${version.value} $pubArtifact"""
+    val cmd = s"""gh release create --generate-notes --notes-file docs/relnotes.txt  v${version.value} $pubArtifact"""
     log.info((s"cmd: $cmd"))
     Process(cmd) ! log
     log.info(s"\tcmd: $cmd done")
@@ -136,7 +136,6 @@ ghRelease := {
       e.printStackTrace()
   }
 }
-
 
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies, // : ReleaseStep
