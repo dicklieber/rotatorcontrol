@@ -1,10 +1,10 @@
 import sbtassembly.MergeStrategy
 
-import java.nio.file.{Files, Path, Paths}
+import java.nio.file.{Files, Paths}
 import scala.language.postfixOps
 import scala.sys.process.Process
 
-ThisBuild / scalaVersion := "2.13.10"
+ThisBuild / scalaVersion := "2.13.14"
 
 logBuffered := false
 /**
@@ -47,14 +47,14 @@ buildInfoOptions ++= Seq(
   BuildInfoOption.BuildTime
 )
 
-resolvers += ("Reposilite" at "http://194.113.64.105:8080/releases")
-  .withAllowInsecureProtocol(true)
+//resolvers += ("Reposilite" at "http://194.113.64.105:8080/releases")
+//  .withAllowInsecureProtocol(true)
 
 val logbackVersion = "1.2.3"
 
 libraryDependencies ++= Seq(
-  "com.wa9nnn" %% "util" % "0.1.9",
-  "org.scalafx" %% "scalafx" % "19.0.0-R30" excludeAll (
+//  "com.wa9nnn" %% "util" % "0.1.9",
+  "org.scalafx" %% "scalafx" % "21.0.0-R32" excludeAll (
     ExclusionRule(organization = "org", "openjfx"),
     ),
   "org.scalafx" %% "scalafx-extras" % "0.7.0",
@@ -80,7 +80,7 @@ libraryDependencies ++= Seq(
 publish / skip := true
 
 
-import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
+import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations.*
 
 
 val ghRelease = taskKey[Unit]("send stuff to github")

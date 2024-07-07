@@ -50,8 +50,8 @@ object InputHelper {
    * @param regex     discard Chars not passing this.
    */
   def forceAllowed(textField: TextInputControl, regex: Regex): Unit = {
-    textField.onKeyPressed = { event: KeyEvent =>
-      Option(event.text).foreach { ch: String =>
+    textField.onKeyPressed = { (event: KeyEvent) =>
+      Option(event.text).foreach { (ch: String) =>
         val matches = regex.matches(ch)
         if (!matches) {
           event.consume()

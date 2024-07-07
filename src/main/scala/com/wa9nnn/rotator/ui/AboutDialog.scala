@@ -19,13 +19,11 @@
 package com.wa9nnn.rotator.ui
 
 import com.wa9nnn.rotator.{BuildInfo, ConfigManager}
-import com.wa9nnn.util.TimeConverters
 import scalafx.Includes._
 import scalafx.scene.control._
 
 import java.awt.Desktop
 import java.net.URI
-import java.time.Instant
 import javax.inject.Inject
 
 class AboutDialog @Inject()(configManager: ConfigManager) extends Dialog[String] {
@@ -55,11 +53,9 @@ class AboutDialog @Inject()(configManager: ConfigManager) extends Dialog[String]
     goc.addLabel(key, str)
   }
 
-  private val builtAt = TimeConverters.instantDisplayUTCLocal(Instant.ofEpochMilli(BuildInfo.builtAtMillis))
   private val githublink: String = "https://github.com/dicklieber/rotatorcontrol"
   val cellStyle: String = "cellStyle"
   goc.addLabel("Version", BuildInfo.version)
-  goc.addLabel("Built at", builtAt)
   goc.addLabel("Git Branch", BuildInfo.gitCurrentBranch)
   goc.addLabel("Config Location", configManager.defaultPath)
   goc.addControl("Source Code", new  Hyperlink(githublink) {

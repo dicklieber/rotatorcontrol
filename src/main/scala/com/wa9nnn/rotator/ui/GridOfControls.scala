@@ -30,7 +30,6 @@ import com.wa9nnn.rotator.ui.InputHelper.{forceAllowed, forceCaps => ForceCaps, 
 
 import java.text.NumberFormat
 import java.time.Duration
-import java.util.Properties
 import java.util.concurrent.atomic.AtomicInteger
 import scala.util.matching.Regex
 
@@ -169,9 +168,10 @@ class GridOfControls(gaps: (Int, Int) = 10 -> 10, insets: Insets = Insets(20, 10
    */
   def addLabel(labelText: String, value: Any, classStyle: String*): Unit = {
     val row = label(labelText)
-    val cell = com.wa9nnn.util.tableui.Cell(value)
+//    val cell = com.wa9nnn.util.tableui.Cell(value)
     val control = new Label {
-      text = cell.value
+//      text = cell.value
+      text = value.toString
     }
     control.styleClass.add(cellStyle)
     add(control, 1, row)

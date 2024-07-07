@@ -10,8 +10,7 @@ Written in Scala to allow write-once run anywhere.
 ## Building
 ### Requiments
 - java JDK with JavaFx Avaialable from bellsoft. https://bell-sw.com/pages/downloads/ 
-  - Select _JDK 11 LTS_
-  - Scroll down for the _Full JDK_ for your operating system.
+  - Select 21.0.3.fx-librca
   
 - sbt See https://www.scala-sbt.org
 
@@ -22,7 +21,15 @@ This should produce :
 `target/universal/rgrotctld-0.0.1.zip`
 
 To build a release (requires github git permissions):
+
 `% sbt release`
+
+To build a jar file:
+
+`% sbt assembly`
+
+builds rotatorcontrol.jar in ./target/result
+
 
 ### Install via zip file
 1. Unzip the rgrotctld-x.x.x.zip file. 
@@ -32,6 +39,8 @@ To build a release (requires github git permissions):
 `Mac or Linux:  ./RotatorControl`
 
 `Windows: RotatorControl`
+
+
 
 ###Status
 This the beginning of a work-in-progress.

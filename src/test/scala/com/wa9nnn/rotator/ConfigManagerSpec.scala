@@ -3,8 +3,7 @@ package com.wa9nnn.rotator
 import com.wa9nnn.util.HostAndPort
 import org.specs2.mutable.Specification
 
-import java.nio.file.{Files, Path}
-import scala.util.Try
+import java.nio.file.Files
 
 class ConfigManagerSpec extends Specification {
 

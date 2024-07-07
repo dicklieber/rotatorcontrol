@@ -81,7 +81,7 @@ class ConfigEditorDialog @Inject()(configManager: ConfigManager) extends Dialog[
     gridPane.add(new Label("Host"), 1, 0)
     gridPane.add(new Label("Port"), 2, 0)
 
-    appConfig.rotators.foreach { rotatorConfig: RotatorConfig =>
+    appConfig.rotators.foreach { (rotatorConfig: RotatorConfig) =>
       val r = row.incrementAndGet()
       add(rotatorConfig.nameProperty, r, 0).requestFocus()
       add(rotatorConfig.hostProperty, r, 1)
